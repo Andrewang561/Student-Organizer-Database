@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef TASK_H
+#define TASK_H
+
 using namespace std;
 
 class Task {
@@ -33,3 +35,5 @@ class Task {
         // Overload == operator
         bool operator== (const task &t) const;
 };
+
+#endif // TASK_H

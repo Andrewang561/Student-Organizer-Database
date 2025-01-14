@@ -4,17 +4,17 @@
 
 using namespace std;
 
-schoolClass::schoolClass() {
+SchoolClass::schoolClass() {
     name = "";
     description = "";
 }
 
-schoolClass::schoolClass(string n, string d) {
+SchoolClass::schoolClass(string n, string d) {
     name = n;
     description = d;
 }
 
-bool schoolClass::isEarlier(task t1, task t2) {
+bool SchoolClass::isEarlier(task t1, task t2) {
     if (t1.year < t2.year) {
         return true;
     } else if (t2.year < t1.year) {
@@ -30,7 +30,7 @@ bool schoolClass::isEarlier(task t1, task t2) {
     return false;
 }
 
-void schoolClass::addTask(task t) {
+void SchoolClass::addTask(task t) {
     for (int i = 0; i < homework.size(); i++) {
         if (isEarlier(t, homework[i])) {
             homework.insert(homework.begin() + i, t);
@@ -41,7 +41,15 @@ void schoolClass::addTask(task t) {
     homework.push_back(t);
 }
 
-void schoolClass::removeTask(task t) {
+void SchoolClass::removeTask(task t) {
     homework.erase(find(homework.begin(), homework.end(), t));
+}
+
+void SchoolClass::printHomework() {
+    for (int i = 0; i < homework.size(); i++) {
+        homework[i].printName();
+        homework[i].printDescription();
+        homework[i].printDueDate();
+    }
 }
 

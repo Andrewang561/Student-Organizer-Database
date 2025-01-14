@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class schoolClass {
+class SchoolClass {
     public:
         string name;
         vector<task> homework;
@@ -30,6 +30,9 @@ class schoolClass {
         // Removes a task from homework
         // REQUIRED: Order is preserved after removal
         void removeTask(task t);
+
+        // Print out all of the homework for the course
+        void printHomework();
 
 };
 

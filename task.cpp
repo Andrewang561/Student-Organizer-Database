@@ -18,26 +18,6 @@ Task::task(int d, int m, int y, string n, string d) {
     description = d;
 }
 
-int Task::getDay() {
-    return day;
-}
-
-int Task::getMonth() {
-    return month;
-}
-
-int Task::getYear() {
-    return year;
-}
-
-string Task::getName() {
-    return name;
-}
-
-string Task::getDescription() {
-    return description;
-}
-
 void Task::changeDueDate(int d, int m, int y) {
     day = d;
     month = m;
@@ -54,5 +34,13 @@ void Task::printName() {
 
 void Task::printDescription() {
     cout << description << endl;
+}
+
+void Task::deleteTask(Task t) {
+    delete t;
+}
+
+bool Task::operator== (const task &t) const {
+    return day == t.day && month == t.month && year == t.year && name == t.name;
 }
 

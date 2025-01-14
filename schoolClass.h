@@ -10,7 +10,7 @@ using namespace std;
 class SchoolClass {
     public:
         string name;
-        vector<task> homework;
+        vector<Task> homework;
         string description;
 
         // Constructs an empty class
@@ -21,15 +21,15 @@ class SchoolClass {
 
         // Returns true if the first task's due date is earlier than the second task
         // Helper function for addTask
-        bool isEarlier(task t1, task t2);
+        bool isEarlier(Task t1, Task t2);
 
         // Add a task to homework
         // REQUIRED: The array is sorted in order from early to latest due date
-        void addTask(task t);
+        void addTask(Task t);
 
         // Removes a task from homework
         // REQUIRED: Order is preserved after removal
-        void removeTask(task t);
+        void removeTask(Task t);
 
         // Print out all of the homework for the course
         void printHomework();

@@ -14,7 +14,7 @@ SchoolClass::schoolClass(string n, string d) {
     description = d;
 }
 
-bool SchoolClass::isEarlier(task t1, task t2) {
+bool SchoolClass::isEarlier(Task t1, Task t2) {
     if (t1.year < t2.year) {
         return true;
     } else if (t2.year < t1.year) {
@@ -30,7 +30,7 @@ bool SchoolClass::isEarlier(task t1, task t2) {
     return false;
 }
 
-void SchoolClass::addTask(task t) {
+void SchoolClass::addTask(Task t) {
     for (int i = 0; i < homework.size(); i++) {
         if (isEarlier(t, homework[i])) {
             homework.insert(homework.begin() + i, t);
@@ -41,7 +41,7 @@ void SchoolClass::addTask(task t) {
     homework.push_back(t);
 }
 
-void SchoolClass::removeTask(task t) {
+void SchoolClass::removeTask(Task t) {
     homework.erase(find(homework.begin(), homework.end(), t));
 }
 

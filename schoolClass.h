@@ -34,6 +34,9 @@ class SchoolClass {
         // Print out all of the homework for the course
         void printHomework();
 
+        // Returns true if class has homework, false otherwise
+        bool hasHomework();
+
 };
 
 #endif // SCHOOLCLASS_H

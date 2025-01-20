@@ -25,11 +25,15 @@ Task Courses::findEarliestTask() {
         return task();
     }
 
-    if (classes.size() == 1) {
-        if (classes[0].homework.size() > 0) {
-            return classes[0].homework[0];
-        } else {
-            return task();
+    Task earliestTask = task();
+
+    for (int i = 0; i < classes.size(); i++) {
+        if (classes[i].hasHomework()) {
+            if (classes[i].isEarlier(classes[i].homework[0], earliestTask)) {
+                earliestTask = classes[i].homework[0];
+            }
         }
     }
+
+    return earliestTask;  
 }

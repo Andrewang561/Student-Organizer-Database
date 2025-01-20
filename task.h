@@ -11,6 +11,9 @@ class Task {
         string name;
         string description = "";
 
+        // Constructs an empty taskk
+        task();
+
         // Constructs a new task with information about its due date and name
         task(int d, int m, int y, string n);
 

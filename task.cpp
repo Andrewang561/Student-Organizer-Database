@@ -4,6 +4,12 @@
 
 using namespace std;
 
+Task::task() {
+    day = 0;
+    month = 0;
+    year = 0;
+}
+
 Task::task(int d, int m, int y, string n) {
     day = d;
     month = m;

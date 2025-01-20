@@ -15,6 +15,18 @@ SchoolClass::schoolClass(string n, string d) {
 }
 
 bool SchoolClass::isEarlier(Task t1, Task t2) {
+    if (t1.day == 0 && t1.month == 0 && t1.year == 0 && t2.day == 0 && t2.month == 0 && t2.year == 0) {
+        return false;
+    }
+
+    if (t1.day == 0 && t1.month == 0 && t1.year == 0) {
+        return false;
+    }
+
+    if (t2.day == 0 && t2.month == 0 && t2.year == 0) {
+        return true;
+    }
+    
     if (t1.year < t2.year) {
         return true;
     } else if (t2.year < t1.year) {
@@ -51,5 +63,13 @@ void SchoolClass::printHomework() {
         homework[i].printDescription();
         homework[i].printDueDate();
     }
+}
+
+bool SchoolClass::hasHomework() {
+    if (homework.size() == 0) {
+        return false;
+    }
+
+    return true;
 }
 
